@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="config.mapping.Mapper">
+
+
+    <select id="GetCreditAppCustomerData" parameterType="map" resultType="com.huisou.analysis.model.openline.CreditAppCustomer">
+        select id,Id5,local_source,is_ocr_obverse,is_ocr_reverse,source,province,city from openline.credit_app_customer where source = 6 and create_time >= #{startTime} and create_time &lt;= #{endTime};
+    </select>
+    <select id="GetCreditAppCustomerClientData" parameterType="map" resultType="com.huisou.analysis.model.openline.CreditAppCustomerClient">
+        select a.id,a.credit_app_customer_id,a.client_type,a.login_status,a.us,a.cell_phone_type,a.is_enable from openline.credit_app_customer_client a JOIN openline.credit_app_customer b ON a.credit_app_customer_id = b.id WHERE b.source = 6 and a.create_time >= #{startTime} and a.create_time &lt;= #{endTime};
+    </select>
+
+</mapper>

@@ -1,0 +1,20 @@
+{
+  "openline":{
+    "credit_app_customer":{
+      "Id5":"discrete",
+      "local_source":"discrete",
+      "is_ocr_obverse":"discrete",
+      "is_ocr_reverse":"discrete",
+      "source":"discrete",
+      "province":"discrete",
+      "city":"discrete"
+    },
+    "credit_app_customer_client":{
+      "client_type":"discrete",
+      "login_status":"discrete",
+      "us":"discrete",
+      "cell_phone_type":"discrete",
+      "is_enable":"discrete"
+    }
+  }
+}
